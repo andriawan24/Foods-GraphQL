@@ -12,6 +12,7 @@ const typeDefs = gql`
 
     type Query {
         getAllFoods: [Foods]!
+        getFoods(_id: ID!): Foods
     }
 
     type Mutation {
@@ -30,7 +31,11 @@ const typeDefs = gql`
             callories: Int,
             cook_time: Int,
             category: String
-        ): Foods!
+        ): Foods!,
+
+        deleteFood(
+            _id: ID!
+        ): Boolean  
     }
 `
 
